@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CharmSkin</title>
+	<link rel="stylesheet" href="assets/style/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src=”https://cdn.jsdelivr.net/npm/vue”></script>
+</head>
+<body>
+ 
+<header>
+  <div class="jumbotron">
+       <img class="logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNDg1LjA1NSA0ODUuMDU1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0ODUuMDU1IDQ4NS4wNTU7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNMTkxLjc5NSwyODUuNjU5Yy0zLjgwNywzLjYwNy04LjQ2Miw1Ljc3LTEzLjEwNiw2LjA5Yy00LjEwNSwwLjI4MS03LjY4Ni0wLjk1NS0xMC4wODItMy40ODUNCgkJCWMtMi44NS0zLjAwOC03LjU5Ny0zLjEzNC0xMC42MDMtMC4yODRjLTMuMDA3LDIuODQ5LTMuMTM0LDcuNTk2LTAuMjg0LDEwLjYwM2M1LjA1OCw1LjMzNywxMi4wMTksOC4yMDgsMTkuNzg3LDguMjA4DQoJCQljMC43MjksMCwxLjQ2Ny0wLjAyNSwyLjIwOS0wLjA3N2M4LjExMy0wLjU1NywxNi4wNjctNC4xNjcsMjIuMzk3LTEwLjE2N2MzLjAwNy0yLjg0OSwzLjEzNC03LjU5NiwwLjI4NC0xMC42MDMNCgkJCUMxOTkuNTQ5LDI4Mi45MzUsMTk0LjgwMSwyODIuODA5LDE5MS43OTUsMjg1LjY1OXoiLz4NCgkJPHBhdGggZD0iTTMxNy4wMTQsMjg4LjI2NGMtMi4zOTcsMi41MjktNS45OCwzLjc1OC0xMC4wODQsMy40ODVjLTQuNjQ1LTAuMzE5LTkuMy0yLjQ4Mi0xMy4xMDYtNi4wOQ0KCQkJYy0zLjAwNS0yLjg0OS03Ljc1My0yLjcyMy0xMC42MDIsMC4yODRjLTIuODUsMy4wMDYtMi43MjMsNy43NTMsMC4yODQsMTAuNjAzYzYuMzMsNiwxNC4yODQsOS42MSwyMi4zOTgsMTAuMTY3DQoJCQljMC43NDMsMC4wNTIsMS40OCwwLjA3NywyLjIxLDAuMDc3YzcuNzY4LDAsMTQuNzMxLTIuODcyLDE5Ljc4OC04LjIwOGMyLjg1LTMuMDA3LDIuNzIzLTcuNzU0LTAuMjg0LTEwLjYwMw0KCQkJQzMyNC42MTIsMjg1LjEzLDMxOS44NjMsMjg1LjI1NywzMTcuMDE0LDI4OC4yNjR6Ii8+DQoJCTxwYXRoIGQ9Ik0xNjcuNjYxLDk5Ljk3NmMtNC45MTgtNS41OTEtOS4zMDQtMTEuMTUtMTIuOTU4LTE2LjU5Yy0xNC40ODYsOS41ODItMjguMTMyLDIxLjI3OC00MC4xNzIsMzQuNzE3DQoJCQljLTMyLjQ1NywzNi4yMjctNDguNTIsODAuMTgyLTQ0LjA3LDEyMC41OTRjMS43NywxNi4wODEsNC42NzEsMjAuOTg5LDUuNjY5LDIyLjI0M2MwLjkxNC0wLjE4NCwzLjA5OC0wLjksNy4xOTYtMy42MjcNCgkJCWMwLjE0NC04LjQwMSwyLjYxNy0zMS41Myw0NS4yMDYtOTkuMjVDMTQ0LjE5MSwxMzMuMTY1LDE2MC4wMDUsMTEwLjY2MywxNjcuNjYxLDk5Ljk3NnoiLz4NCgkJPHBhdGggZD0iTTM3MS41OTYsMTIwLjI0MWMtMzUuNTA1LTQwLjA1OC04Ni4xOTctNjUuOTQtMTI5LjE0Ni02NS45NGMtMjEuNzcxLDAtNDQuODc4LDYuMDg1LTY2Ljk0OCwxNy4wNjcNCgkJCWMzMC4yNDcsNDQuMDc0LDExOC43MywxMDEuMDE1LDEyMi4xODUsMTAyLjc4NGMyOC40OCwxNC44OTIsNTQuMDE1LDM4Ljk4Niw3My45MzUsNTcuOTAyDQoJCQljOS40ODYsOS4wMDksMTcuNjc5LDE2Ljc4OCwyNC43OTQsMjIuMzIxYzcuMzM1LDUuNzA0LDEwLjc2Miw2Ljc2NywxMS44NzcsNi45NjFjMC45NzYtMS4xMTMsNC4xMjEtNS44OTUsNi4xNjItMjIuNzY5DQoJCQlDNDE5LjI1NSwxOTguODYyLDQwNC4wMzUsMTU2Ljg0LDM3MS41OTYsMTIwLjI0MXoiLz4NCgkJPHBhdGggZD0iTTIzNS43NiwxNjAuMTg2Yy0xNi42NDMtMTIuNDYxLTM1LjEyNC0yNy4zMjctNTEuMTc1LTQyLjY4NmMtMjMuMjMxLDMyLjQ3NC01Mi43MDUsNzguMDAxLTY3LjY0NiwxMTAuMzczDQoJCQlDMTQ3LjM5LDE5OS4zMDgsMTg3LjcwNSwxNjMuMzAyLDIzNS43NiwxNjAuMTg2eiIvPg0KCQk8cGF0aCBkPSJNMzYwLjc4Myw3Ni44MjhDMzU5LjA5OCwzNC4yMDgsMzA2LjA3OCwwLDI0MC45MTcsMGMtNjYuMDc2LDAtMTE5LjY2MywzNS4xNzYtMTE5LjkwMiw3OC42MjgNCgkJCWMzNi40NTQtMzAuMzIsODAuNzc4LTQ4LjMyNywxMjEuNDM1LTQ4LjMyN0MyODEuNjY0LDMwLjMwMSwzMjQuNTg5LDQ3LjU2MywzNjAuNzgzLDc2LjgyOHoiLz4NCgkJPHBhdGggZD0iTTM1NS4wOTQsMjQ5LjQ1OWMtMzAuNzI4LTI5LjE4MS02OC45NzItNjUuNDk3LTExMi42NDQtNjUuNDk3Yy00My44MjYsMC04Mi4zODUsMzYuMjgxLTExMy4zNjYsNjUuNDM1DQoJCQljLTEwLjIxOSw5LjYxNS0xOS4xMTgsMTcuOTg3LTI3LjI4NiwyNC4xOTRjLTAuODc2LDYuODE5LTEuMzM5LDE0LjAyNy0xLjMzOSwyMS42NjFjMCw5MC41ODEsNjMuNzMzLDE4OS44MDMsMTQyLjM1MSwxODkuODAzDQoJCQljNzguNjE5LDAsMTQyLjM1Mi05OS4yMjIsMTQyLjM1Mi0xODkuODA0YzAtNy4wNzEtMC4zODktMTMuNzg2LTEuMTQzLTIwLjE1OEMzNzUuMzg5LDI2OC43MjgsMzY1Ljk5MiwyNTkuODA4LDM1NS4wOTQsMjQ5LjQ1OXoNCgkJCSBNMTM5LjY1NSwyODEuODQzYzAtMjQuNDk3LDE5Ljg2LTM3LjQ3OSw0NC4zNTYtMzcuNDc5czQ0LjM1NSwxMi45ODIsNDQuMzU1LDM3LjQ3OWMwLDI0LjQ5Ni0xOS44NTksNDQuMzU2LTQ0LjM1NSw0NC4zNTYNCgkJCVMxMzkuNjU1LDMwNi4zNCwxMzkuNjU1LDI4MS44NDN6IE0yNDIuODA4LDQ1Mi4wMjJjLTE4Ljg3LDAtMzUuNjkxLTEzLjk0My0zNi4zMDUtMjQuOTg4YzAuNC03LjQ0Nyw3LjkxOS0yMS43ODMsMjEuOTU0LTI0LjAxNg0KCQkJYzUuMzI5LTAuODQ5LDkuNTIxLDIuMjY0LDEyLjU4Miw0LjUzOGMwLjM5MSwwLjI5MSwwLjg3NCwwLjY0OSwxLjMzMywwLjk3NGMwLjQ5NC0wLjM0NSwxLjAyMS0wLjcyOCwxLjQ0NS0xLjAzNw0KCQkJYzMuMjY2LTIuMzg5LDcuMzMyLTUuMzY1LDEyLjQ2Ny00LjYwOGMxMy42MjgsMS45OTUsMjIuNDI5LDE1LjUyNSwyMi44MywyNC4xNTJDMjc4LjQ5OSw0MzguMDgxLDI2MS42NzgsNDUyLjAyMiwyNDIuODA4LDQ1Mi4wMjINCgkJCXogTTMwMS42MDgsMzI2LjE5OGMtMjQuNDk4LDAtNDQuMzU2LTE5Ljg1OS00NC4zNTYtNDQuMzU1YzAtMjQuNDk3LDE5Ljg1OC0zNy40NzksNDQuMzU2LTM3LjQ3OQ0KCQkJYzI0LjQ5NiwwLDQ0LjM1NSwxMi45ODIsNDQuMzU1LDM3LjQ3OUMzNDUuOTYzLDMwNi4zMzksMzI2LjEwNCwzMjYuMTk4LDMwMS42MDgsMzI2LjE5OHoiLz4NCgk8L2c+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg=="
+        />
+       <h1>CharmSkin</h1>
+  </div>
+        <nav>
+           <ul>
+               <li><a href="#store">Store</a></li>
+               <li><a href="#product">Products</a></li>
+               <li><a href="#testimonial">Testimonial</a></li>
+               <li><a href="#contact">Contact</a></li>
+               <li><div id="app">Masukkan Username
+                <input type="text" v-model="name">
+                <button type="button" @click="showMessage"> Klik </button>
+              </div>
+              <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+              <script>
+                new Vue({
+                el:"#app",
+                data: {
+                  name: ''
+                },
+                methods: {
+                  showMessage: function() {
+                  alert(`Selamat datang, ${this.name}`)
+                  }
+                }
+                }); </script></li>
+           </ul>
+       </nav>
+</header>
+
+<main>
+  <div class="top-wrapper">
+    <div class="container">
+      <h1>CharmSkin</h1>
+      <h2>For glowing and healthy skin</h2>
+      <h3>Good Skin Good Mood</h3>
+    </div>
+  </div>
+        <div id="content">
+           <article id="store" class="card-nocolor">
+		            <h2>Our Store</h2>
+		            <p>CharmSkin, is a place for you to pick and chose the right daily skincare you needed to achieve a healthy and beautiful skin</p>
+           </article>
+ 
+           <article id="product" class="card">
+                <h2>Our Products</h2>
+                <p>We have a big range of skincare product. You can search your own skincare base on your need such as, dry, oily, combination, and many more.</p>
+                 <div class="slideshow-container">
+                  <div class="mySlides fade">
+                    <img src="assets/images/product1.jpg" style="width:100%">
+                    <div class="text">Caption Text</div>
+                  </div>
+
+                  <div class="mySlides fade">
+                    <img src="assets/images/product2.jpg" style="width:100%">
+                    <div class="text">Caption Two</div>
+                  </div>
+
+                  <div class="mySlides fade">
+                    <img src="assets/images/product.jpg" style="width:100%">
+                    <div class="text">Caption Three</div>
+                  </div>
+                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br>
+
+                <div style="text-align:center">
+                  <span class="dot" onclick="currentSlide(1)"></span>
+                  <span class="dot" onclick="currentSlide(2)"></span>
+                  <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+           </article>
+ 
+           <article id="testimonial" class="card-nocolor">
+		            <h2>Testimonial</h2>
+		            <p> Here's are our customer testimonial after using our products</p>
+                <section>
+                  <div class="container-column">
+                    <article id="product" class="box">
+                    <h2>Marina</h2>
+                    <p>Its good</p>
+                    </article>
+                    <article id="product" class="box">
+                    <h2>Marina2</h2>
+                    <p>Its awesome</p>
+                    </article>
+                    <article id="product" class="box">
+                    <h2>Marina3</h2>
+                    <p>Its nice</p>
+                    </article>
+                  </div>
+                </section>
+           </article>
+
+           <article id="contact"  class="card">
+                <h2>Contact Us</h2>
+                <table>
+                  <tr>
+                     <th>IG</th>
+                     <td>CharmSkin</td>
+                  </tr>
+                  <tr>
+                     <th>Facebook</th>
+                     <td>charm-skin</td>
+                  </tr>
+                  <tr>
+                     <th>Email</th>
+                     <td>charm@skin.com</td>
+                  </tr>
+              </table>
+           </article>
+       </div>
+ 
+<aside>
+  <article class="profile" class="card-nocolor">
+    <header>
+    <h2>About Me</h2>
+      <figure>
+        <img src="assets/images/myface.png">
+        <figcaption>This Is Me</figcaption>
+      </figure>
+    </header>
+    <section>
+    <h3>Self Intro</h3>
+     <table>
+          <tr>
+             <th>Name</th>
+             <td>Aysha Nabila Adhelina</td>
+          </tr>
+          <tr>
+             <th>Location</th>
+             <td>Di tempat</td>
+          </tr>
+          <tr>
+             <th>Email</th>
+             <td>ayshaadhelina@gmail.com</td>
+          </tr>
+      </table>
+    </section>
+  </article>
+</aside>
+</main>
+
+<footer>
+  <div>
+    <ul>
+      <li>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></li>
+      <li><a href="https://www.freepik.com/psd/mockup">Mockup psd created by rawpixel.com - www.freepik.com</a></li>
+      <li><a href="https://www.freepik.com/vectors/background">Background vector created by macrovector - www.freepik.com</a></li>
+      <li><a href='https://www.freepik.com/vectors/background'>Background vector created by pikisuperstar - www.freepik.com</a></li>
+      <li><a href='https://www.freepik.com/photos/hand'>Hand photo created by senivpetro - www.freepik.com</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="assets/style/charm.js"></script>
+</body>
+</html>
